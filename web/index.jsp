@@ -58,10 +58,10 @@
                 </div>
                 <nav class="navegacion-principal clearfix">
                     <a href="">Eventos</a>
-                    <a href="nosotros.jsp">Nosotros</a>
+                    <a href="Redireccion?pagina=Nosotros">Nosotros</a>
                     <a href="contacto.jsp">Contacto</a>
-                    <a href="suscribirme.jsp">Suscribirme</a>
-                    <a href="login.jsp">login</a>
+                    <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
+                    <a href="Redireccion?pagina=login">login</a>
                 </nav>
             </div>
         </div>
