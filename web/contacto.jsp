@@ -51,7 +51,7 @@
                     <a href="">Eventos</a>
                     <a href="nosotros.jsp">Nosotros</a>
                     <a href="contacto.jsp">Contacto</a>
-                    <a href="">Suscribirme</a>
+                    <a href="suscribirme.jsp">Suscribirme</a>
                     <a href="login.jsp">login</a>
                 </nav>
             </div>
@@ -118,7 +118,7 @@
                 Todos los derechos Reservados Musica ITZ 2019.
             </p>
         </footer>
-        <script src="js/main.js" type="text/javascript"></script>
+        <script src="js/main.js"></script>
         <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
     </body>
 </html>

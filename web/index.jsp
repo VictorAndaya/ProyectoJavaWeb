@@ -60,11 +60,12 @@
                     <a href="">Eventos</a>
                     <a href="nosotros.jsp">Nosotros</a>
                     <a href="contacto.jsp">Contacto</a>
-                    <a href="">Suscribirme</a>
+                    <a href="suscribirme.jsp">Suscribirme</a>
                     <a href="login.jsp">login</a>
                 </nav>
             </div>
         </div>
+
         <section class="seccion contenedor">
             <h2>Los Mejores Conciertos</h2>
             <p class="justificado">
@@ -72,15 +73,13 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, possimus, voluptatibus quia id eveniet nisi quos error ut autem illum doloremque expedita hic nulla facilis non sint ab suscipit quo!
             </p>
         </section>
+        <section class="seccion">
+            <h2>Encuesta</h2>
+        </section>
 
         <section class="programa">
             <div class="contenedor-video">
                 <img src="img/concierto.jpg" alt="">
-                <!--<video src="" autoplay loop poster="img/bg-talleres.jpg">
-                   <source autoplay loop src="video/video/video.mp4">
-                   <source autoplay loop src="video/video/video.webm">
-                   <source autoplay loop src="video/video/video.ogv">
-               </video>-->
             </div>
             <div class="contenido-programa">
                 <div class="contenedor">
@@ -185,10 +184,10 @@
         <div class="contador parallax">
             <div class="contenedor">
                 <ul class="resumen-evento clearfix">
-                    <li><p class="numeros">6</p> Invitados</li>
-                    <li><p class="numeros">15</p> Invitados</li>
-                    <li><p class="numeros">3</p> Invitados</li>
-                    <li><p class="numeros">9</p> Invitados</li>
+                    <li><p class="numeros">0</p> Invitados</li>
+                    <li><p class="numeros">0</p> Invitados</li>
+                    <li><p class="numeros">0</p> Invitados</li>
+                    <li><p class="numeros">0</p> Invitados</li>
                 </ul>
 
             </div>
@@ -272,10 +271,10 @@
             <h2>Faltan</h2>
             <div class="cuenta-regresiva contenedor">
                 <ul class="clearfix">
-                    <li><p class="numeros">80</p> dias</li>
-                    <li><p class="numeros">15</p> horas</li>
-                    <li><p class="numeros">20</p> minutos</li>
-                    <li><p class="numeros">40</p> segundos</li>
+                    <li><p id="dias" class="numeros"></p> dias</li>
+                    <li><p id="horas" class="numeros"></p> horas</li>
+                    <li><p id="minutos" class="numeros"></p> minutos</li>
+                    <li><p id="segundos" class="numeros"></p> segundos</li>
                 </ul>
             </div>
         </section>
@@ -284,14 +283,13 @@
             <div class="contenedor clearfix">
                 <div class="footer-informacion">
                     <h3>Sobre <span>Musica ITZ</span></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, cum, nobis, deserunt, laudantium laborum ea magni sint maxime quis odit iure fuga sapiente esse rem excepturi eum ullam blanditiis expedita.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae,rem excepturi eum ullam blanditiis expedita.</p>
 
                 </div>
                 <div class="ultimos-tweets">
                     <h3>Ultimos <span>Tweets</span></h3>
                     <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, aspernatur, ea, reprehenderit alias dolores repudiandae unde voluptatibus perferendis numquam facilis saepe quaerat laboriosam sed suscipit quibusdam autem dicta natus libero.</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, aspernatur, ea, reprehenderit alias dolores repudiandae unde voluptatibus perferendis numquam facilis saepe quaerat laboriosam sed suscipit quibusdam autem dicta natus libero.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. numquam facilis saepe quaerat laboriosam sed suscipit quibusdam autem dicta natus libero.</li>
 
                     </ul>
                 </div>
@@ -309,12 +307,16 @@
                 Todos los derechos Reservados Musica ITZ 2019.
             </p>
         </footer>
-        
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="jquery-1.3.2.min.js" type="text/javascript"></script>   
         <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
         <script src="js/plugins.js" type="text/javascript"></script>
+        <script src="js/jquery.lettering.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.animateNumber.min.js"></script> 
+        <script src="js/jquery.countdown.min.js"></script>
     </body>
 </html>

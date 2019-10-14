@@ -52,7 +52,7 @@
                     <a href="">Eventos</a>
                     <a href="nosotros.jsp">Nosotros</a>
                     <a href="contacto.jsp">Contacto</a>
-                    <a href="">Suscribirme</a>
+                    <a href="suscribirme.jsp">Suscribirme</a>
                     <a href="login.jsp">login</a>
                 </nav>
             </div>
