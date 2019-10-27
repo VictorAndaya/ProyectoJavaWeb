@@ -57,6 +57,7 @@
                     <span></span>
                 </div>
                 <nav class="navegacion-principal clearfix">
+                    <a href="encuesta.jsp">Encuesta</a>
                     <a href="">Eventos</a>
                     <a href="Redireccion?pagina=Nosotros">Nosotros</a>
                     <a href="contacto.jsp">Contacto</a>
@@ -73,10 +74,8 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, possimus, voluptatibus quia id eveniet nisi quos error ut autem illum doloremque expedita hic nulla facilis non sint ab suscipit quo!
             </p>
         </section>
-        <section class="seccion">
-            <h2>Encuesta</h2>
-        </section>
-
+        
+        
         <section class="programa">
             <div class="contenedor-video">
                 <img src="img/concierto.jpg" alt="">

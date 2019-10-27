@@ -38,6 +38,7 @@ public class Redireccion extends HttpServlet {
         if (ubicacion.equals("Nosotros")){ 
                 response.sendRedirect("nosotros.jsp");
         }
+        
         if (ubicacion.equals("login")){ 
                 response.sendRedirect("login.jsp");
         }
