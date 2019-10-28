@@ -9,13 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
         <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+        <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
         <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/all.css" rel="stylesheet" type="text/css"/>
-        <script src="js/main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet"> 
@@ -63,46 +61,9 @@
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
-                    <div class="contenido p-4 bg-light">
-                        <h2>Registrarme</h2>
-                        <form action="#" method="post" onsubmit="return validar();">
-                            <div id="error" class="error"></div>
-                            <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label for="text">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" >
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="text">Apellido</label>
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" >
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="email">Correo</label>
-                                    <input type="text" class="form-control" id="email" placeholder="Email" >
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="password">Contraseña</label>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" >
-                                        <div class="input-group-append">
-                                            <button id="show_password" class="btn boton" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="password">Confirmar Contraseña</label>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" id="txtPassword2" placeholder="Contraseña" >
-                                        <div class="input-group-append">
-                                            <button id="show_password" class="btn boton" type="button" onclick="mostrarPassword2()"> <span class="fa fa-eye-slash icon"></span> </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div><!-- row -->
-                            <button type="submit" id="boton" class="button">Registrarme</button>
-
-                        </form>
+                    <div class="contenido pl-4 pr-4 bg-light">
+                        <h2>Eventos</h2>
+                        
                     </div>
                 </div>
             </div>
@@ -136,9 +97,5 @@
                 Todos los derechos Reservados Musica ITZ 2019.
             </p>
         </footer>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
-
     </body>
 </html>

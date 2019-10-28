@@ -48,7 +48,7 @@
                     <span></span>
                 </div>
                 <nav class="navegacion-principal clearfix">
-                    <a href="">Eventos</a>
+                    <a href="eventos.jsp">Eventos</a>
                     <a href="nosotros.jsp">Nosotros</a>
                     <a href="contacto.jsp">Contacto</a>
                     <a href="suscribirme.jsp">Suscribirme</a>
@@ -60,7 +60,7 @@
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
-                    <div class="contenido pl-4 pr-4 bg-light">
+                    <div class="contenido p-4 bg-light">
                         <h2>Contactanos</h2>
                         <form action="#">
                             <div id="error" class="error"></div>
