@@ -22,24 +22,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <!--<header class="site-header">
-            <div class="hero">
-                <div class="contenido-header">
-                    <nav class="redes-sociales">
-                        <a href=""><i class="fab fa-facebook"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-youtube"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </nav>
-                    <div class="informacion-evento clearfix">
-                        <p class="fecha"><i class="fas fa-calendar-times"></i> 10-12 Diciembre</p>
-                        <p class="ciudad"><i class="fas fa-map-marked-alt"></i> Zacatepec Morelos</p>
-                        <h1 class="nombre-sitio">Musica ITZ</h1>
-                        <p class="slogan">Los mejores conciertos</p>
-                    </div>
-                </div>
-            </div>
-        </header>-->
         <div class="barra">
             <div class="contenedor clearfix">
                 <div class="logo">
@@ -51,36 +33,40 @@
                     <span></span>
                 </div>
                 <nav class="navegacion-principal clearfix">
-                    <a href="eventos.jsp">Eventos</a>
-                    <a href="nosotros.jsp">Nosotros</a>
-                    <a href="contacto.jsp">Contacto</a>
-                    <a href="suscribirme.jsp">Suscribirme</a>
-                    <a href="login.jsp">login</a>
+                    <a href="Redireccion?pagina=eventos">Eventos</a>
+                    <a href="Redireccion?pagina=nosotros">Nosotros</a>
+                    <a href="Redireccion?pagina=contacto">Contacto</a>
+                    <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
+                    <a href="Redireccion?pagina=login">login</a>
                 </nav>
             </div>
         </div>
 
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="contenido p-4 bg-light">
                         <h2>Registrarme</h2>
                         <form action="#" method="post" onsubmit="return validar();">
                             <div id="error" class="error"></div>
                             <div class="row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="text">Nombre</label>
                                     <input type="text" class="form-control" id="nombre" placeholder="Nombre" >
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="text">Apellido</label>
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" >
+                                <div class="form-group col-md-4">
+                                    <label for="text">Apellido Paterno</label>
+                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido Paterno" >
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-4">
+                                    <label for="text">Apellido Materno</label>
+                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido Materno" >
+                                </div>
+                                <div class="form-group col-md-4">
                                     <label for="email">Correo</label>
                                     <input type="text" class="form-control" id="email" placeholder="Email" >
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label for="password">Contraseña</label>
                                     <div class="input-group">
                                         <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" >
@@ -89,7 +75,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label for="password">Confirmar Contraseña</label>
                                     <div class="input-group">
                                         <input type="password" class="form-control" id="txtPassword2" placeholder="Contraseña" >

@@ -35,7 +35,7 @@ public class Redireccion extends HttpServlet {
         
         String ubicacion = request.getParameter("pagina");
         
-        if (ubicacion.equals("Nosotros")){ 
+        if (ubicacion.equals("nosotros")){ 
                 response.sendRedirect("nosotros.jsp");
         }
         
@@ -47,6 +47,9 @@ public class Redireccion extends HttpServlet {
         }
         if (ubicacion.equals("eventos")){ 
                 response.sendRedirect("eventos.jsp");
+        }
+        if (ubicacion.equals("contacto")){ 
+                response.sendRedirect("contacto.jsp");
         }
     }
 

@@ -19,24 +19,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <!--<header class="site-header">
-            <div class="hero">
-                <div class="contenido-header">
-                    <nav class="redes-sociales">
-                        <a href=""><i class="fab fa-facebook"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-youtube"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </nav>
-                    <div class="informacion-evento clearfix">
-                        <p class="fecha"><i class="fas fa-calendar-times"></i> 10-12 Diciembre</p>
-                        <p class="ciudad"><i class="fas fa-map-marked-alt"></i> Zacatepec Morelos</p>
-                        <h1 class="nombre-sitio">Musica ITZ</h1>
-                        <p class="slogan">Los mejores conciertos</p>
-                    </div>
-                </div>
-            </div>
-        </header>-->
         <div class="barra">
             <div class="contenedor clearfix">
                 <div class="logo">
@@ -48,11 +30,11 @@
                     <span></span>
                 </div>
                 <nav class="navegacion-principal clearfix">
-                    <a href="eventos.jsp">Eventos</a>
-                    <a href="nosotros.jsp">Nosotros</a>
-                    <a href="contacto.jsp">Contacto</a>
-                    <a href="suscribirme.jsp">Suscribirme</a>
-                    <a href="login.jsp">login</a>
+                    <a href="Redireccion?pagina=eventos">Eventos</a>
+                    <a href="Redireccion?pagina=nosotros">Nosotros</a>
+                    <a href="Redireccion?pagina=contacto">Contacto</a>
+                    <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
+                    <a href="Redireccion?pagina=login">login</a>
                 </nav>
             </div>
         </div>

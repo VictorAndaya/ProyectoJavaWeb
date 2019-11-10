@@ -34,11 +34,11 @@
                     <span></span>
                 </div>
                 <nav class="navegacion-principal clearfix">
-                    <a href="">Eventos</a>
-                    <a href="nosotros.jsp">Nosotros</a>
-                    <a href="contacto.jsp">Contacto</a>
-                    <a href="suscribirme.jsp">Suscribirme</a>
-                    <a href="login.jsp">login</a>
+                    <a href="Redireccion?pagina=eventos">Eventos</a>
+                    <a href="Redireccion?pagina=nosotros">Nosotros</a>
+                    <a href="Redireccion?pagina=contacto">Contacto</a>
+                    <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
+                    <a href="Redireccion?pagina=login">login</a>
                 </nav>
             </div>
         </div>
