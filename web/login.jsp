@@ -45,17 +45,17 @@
                 <div class="col-md-8">
                     <div class="contenido p-4 bg-light">
                         <h2>Inicia Sesión</h2>
-                        <form action="#">
+                        <form action="ServletConsulta" method="post">
                             <div id="error" class="error"></div>
                             <div class="form-group">
                                 <label for="email">Correo o Usuario</label>
-                                <input type="text" class="form-control" id="email" placeholder="Email o Usuario" required>
+                                <input type="text" class="form-control" name="correo" id="email" placeholder="Email o Usuario" required>
                             </div>
                             <label for="password">Contraseña</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" required>
+                                <input type="password" class="form-control" name="contrasena" id="txtPassword" placeholder="Contraseña" required>
                                 <div class="input-group-append">
-                                    <button id="show_password" class="btn boton" type="button" onclick="mostrarPassword()"><span class="fa fa-eye-slash icon"></span> </button>
+                                    <button id="show_password"  class="btn boton" type="button" onclick="mostrarPassword()"><span class="fa fa-eye-slash icon"></span> </button>
                                 </div>
                             </div>
                             <div class="form-check pt-2">
