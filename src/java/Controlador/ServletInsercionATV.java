@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.Statement;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.naming.Context;
@@ -32,7 +32,7 @@ public class ServletInsercionATV extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         try {
             Context ctx = new InitialContext();
-            fuenteDatos = (DataSource) ctx.lookup("java:comp/env/jdbc/proyectoXbATV");
+            fuenteDatos = (DataSource) ctx.lookup("java:comp/env/jdbc/ejemploBD");
         } catch (Exception e) {
             throw new ServletException("imposible recuperar fuente de datos");
         }
@@ -48,21 +48,23 @@ public class ServletInsercionATV extends HttpServlet {
         String aPaterno = request.getParameter("apaterno");
         String aMaterno = request.getParameter("amaterno");
         Connection conn = null; //conexion parcial
+        out.println("Prueba del registro del cliente <br/>");
         try {
+            out.println("Probamos a recuperar la conexion <br/>");
             synchronized (fuenteDatos) {
                 conn = (Connection) fuenteDatos.getConnection();
                 if (conn == null) {
                     throw new ServletException("Problemas de conexion <br>");
                 }
+                out.println("<br/> Preparamos INSERT... <br/>");
                 Statement stmt = (Statement) conn.createStatement();
-                String qry = "insert into usuarios (email, contrasena, nombre,"
-                        + "apaterno, amaterno) values('" + Correo + "','" + password + "','" + Nombre + "','"
+                String qry = "insert into usuarios values ('" + Correo + "','" + password + "','" + Nombre + "','"
                         + aPaterno + "','" + aMaterno + "');";
                 int resultado = stmt.executeUpdate(qry);
                 out.println("Inserción exitosa");
             }
         } catch (Exception e) {
-            out.println("Falla en Inserción "+e.getMessage());
+            out.println("Falla Inserción "+e.getMessage());
 
         } finally {
             try {
