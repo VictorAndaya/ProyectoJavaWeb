@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/Proyecto_DWJ"/>
+<Context path="/Proyecto_DWJ">
+    <Resource 
+    name = "jdbc/proyectoXbATV"
+    auth = "Container"
+    type = "javax.sql.DataSource"
+    maxActive = "100"
+    maxIdle = "30"
+    maxWait = "10000"
+    username = "root"
+    password = "andaya"
+    driverClassName = "com.mysql.jdbc.Driver"
+    url = "jdbc:mysql://localhost:3306/musicaitz_agk_atv_eha?autoReconnect=true"
+    />
+</Context>

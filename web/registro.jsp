@@ -47,29 +47,29 @@
                 <div class="col-md-12">
                     <div class="contenido p-4 bg-light">
                         <h2>Registrarme</h2>
-                        <form action="#" method="post" onsubmit="return validar();">
+                        <form action="ServletInsercionATV" method="post" onsubmit="return validar();">
                             <div id="error" class="error"></div>
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label for="text">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" >
+                                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" >
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text">Apellido Paterno</label>
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido Paterno" >
+                                    <input type="text" class="form-control" name="apaterno" id="apellido" placeholder="Apellido Paterno" >
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text">Apellido Materno</label>
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido Materno" >
+                                    <input type="text" class="form-control" name="amaterno" id="apellido" placeholder="Apellido Materno" >
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="email">Correo</label>
-                                    <input type="text" class="form-control" id="email" placeholder="Email" >
+                                    <input type="text" name="correo" class="form-control" id="email" placeholder="Email" >
                                 </div>
                                 <div class="col-md-4">
                                     <label for="password">Contraseña</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" >
+                                        <input type="password" name="contrasena" class="form-control" id="txtPassword" placeholder="Contraseña" >
                                         <div class="input-group-append">
                                             <button id="show_password" class="btn boton" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
                                         </div>

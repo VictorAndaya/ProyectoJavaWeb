@@ -1,0 +1,117 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Controlador;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+/**
+ *
+ * @author andaya
+ */
+@WebServlet(name = "ServletInsercionATV", urlPatterns = {"/ServletInsercionATV"})
+public class ServletInsercionATV extends HttpServlet {
+
+    private DataSource fuenteDatos = null;
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        try {
+            Context ctx = new InitialContext();
+            fuenteDatos = (DataSource) ctx.lookup("java:comp/env/jdbc/proyectoXbATV");
+        } catch (Exception e) {
+            throw new ServletException("imposible recuperar fuente de datos");
+        }
+    }
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        String Correo = request.getParameter("correo");
+        String password = request.getParameter("contrasena");
+        String Nombre = request.getParameter("nombre");
+        String aPaterno = request.getParameter("apaterno");
+        String aMaterno = request.getParameter("amaterno");
+        Connection conn = null; //conexion parcial
+        try {
+            synchronized (fuenteDatos) {
+                conn = (Connection) fuenteDatos.getConnection();
+                if (conn == null) {
+                    throw new ServletException("Problemas de conexion <br>");
+                }
+                Statement stmt = (Statement) conn.createStatement();
+                String qry = "insert into usuarios (email, contrasena, nombre,"
+                        + "apaterno, amaterno) values('" + Correo + "','" + password + "','" + Nombre + "','"
+                        + aPaterno + "','" + aMaterno + "');";
+                int resultado = stmt.executeUpdate(qry);
+                out.println("Inserción exitosa");
+            }
+        } catch (Exception e) {
+            out.println("Falla en Inserción "+e.getMessage());
+
+        } finally {
+            try {
+                conn.close();
+            } catch (Exception e) {
+                throw new ServletException("Error en proceso" + e.getMessage() + "<br/>");
+            }
+        }
+        out.println("<br/>-Fin del servlet-"); //cerramos la respuesta
+        out.close();
+    }
+
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *conn
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
+}
