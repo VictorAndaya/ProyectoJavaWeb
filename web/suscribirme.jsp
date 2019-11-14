@@ -23,25 +23,9 @@
         <title>MUSICA ITZ</title>
     </head>
     <body>
-        <div class="barra">
-            <div class="contenedor clearfix">
-                <div class="logo">
-                    <a href="index.jsp" class="index_logo"><img src="img/logo.png" alt=""></a>
-                </div>
-                <div class="menu-movil">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <nav class="navegacion-principal clearfix">
-                    <a href="Redireccion?pagina=eventos">Eventos</a>
-                    <a href="Redireccion?pagina=nosotros">Nosotros</a>
-                    <a href="Redireccion?pagina=contacto">Contacto</a>
-                    <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
-                    <a href="Redireccion?pagina=login">login</a>
-                </nav>
-            </div>
-        </div>
+        
+        <%@ include file="header.jsp" %>
+        
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
@@ -77,35 +61,8 @@
                 </div>
             </div>
         </div>
-        <footer class="site-footer">
-            <div class="contenedor clearfix">
-                <div class="footer-informacion">
-                    <h3>Sobre <span>Musica ITZ</span></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae,rem excepturi eum ullam blanditiis expedita.</p>
-
-                </div>
-                <div class="ultimos-tweets">
-                    <h3>Ultimos <span>Tweets</span></h3>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. numquam facilis saepe quaerat laboriosam sed suscipit quibusdam autem dicta natus libero.</li>
-
-                    </ul>
-                </div>
-                <div class="menu">
-                    <h3>Redes <span>Sociales</span></h3>
-                    <nav class="redes-sociales">
-                        <a href=""><i class="fab fa-facebook"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-youtube"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </nav>
-                </div>
-            </div>
-            <p class="copyright">
-                Todos los derechos Reservados Musica ITZ 2019.
-            </p>
-
-        </footer>
+        
+        <%@ include file="footer.jsp" %>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
