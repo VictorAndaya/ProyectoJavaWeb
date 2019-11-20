@@ -13,7 +13,7 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
+        <title>Header</title>
     </head>
     <body>
         <div class="barra">
@@ -31,7 +31,11 @@
                     <a href="Redireccion?pagina=nosotros">Nosotros</a>
                     <a href="Redireccion?pagina=contacto">Contacto</a>
                     <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
+
+                    <!-- comparar si esta logeado y cambiar 'login' por nombre de usuario-->
+
                     <a href="Redireccion?pagina=login">login</a>
+                    
                 </nav>
             </div>
         </div>

@@ -36,23 +36,23 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="text">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" >
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="text">Apellido</label>
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" >
+                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="text">Numero de Tarjeta</label>
-                                    <input type="text" class="form-control" id="tarjeta" placeholder="0000 0000 0000 0000">
+                                    <input type="text" class="form-control" id="tarjeta" placeholder="0000 0000 0000 0000" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="text">Fecha de Expiracion</label>
-                                    <input type="text" class="form-control" placeholder="MM/AA">
+                                    <input type="text" class="form-control" placeholder="MM/AA" required>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="text">CCV</label>
-                                    <input type="text" class="form-control" placeholder="000">
+                                    <input type="text" class="form-control" placeholder="000" required>
                                 </div>
                             </div><!-- row -->
                             <button type="submit" id="boton" class="button">Pagar</button>

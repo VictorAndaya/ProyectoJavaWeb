@@ -60,7 +60,8 @@ public class ServletConsulta extends HttpServlet {
             PreparedStatement pstmt = con.prepareStatement(qry);
             ResultSet results = pstmt.executeQuery();
             if (results.next()) {
-                out.println("<h2>Bienvenido..." + results.getString("nombre") + "</h2>");
+                response.sendRedirect("index.jsp"); 
+                //out.println("<h2>Bienvenido..." + results.getString("nombre") + "</h2>");
             } else {
                 out.println("<h2>No coincide usuario y contraseña</h2>");
             }
