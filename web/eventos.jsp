@@ -25,10 +25,10 @@
         
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
-                <div class="col-md-8">
-                    <div class="contenido pl-4 pr-4 bg-light">
+                <div class="col-md-12">
+                    <div class="contenido mt-4">
                         <h2>Eventos</h2>
-                        
+                        <jsp:include page="ServletConsultaGeneral"/>
                     </div>
                 </div>
             </div>

@@ -28,7 +28,7 @@
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-12">
-                    <div class="contenido p-4 bg-light">
+                    <div class="contenido p-4">
                         <h2>Registrarme</h2>
                         <form action="ServletInsercionATV" method="post" onsubmit="return validar();">
                             <div id="error" class="error"></div>

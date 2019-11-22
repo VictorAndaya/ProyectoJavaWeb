@@ -23,13 +23,13 @@
         <title>MUSICA ITZ</title>
     </head>
     <body>
-        
+
         <%@ include file="header.jsp" %>
-        
+
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
-                    <div class="contenido p-4 bg-light">
+                    <div class="contenido p-4">
                         <h2>Pago de Suscripción</h2>
                         <form action="#" method="post" onsubmit="return validar();">
                             <div id="error" class="error"></div>
@@ -42,9 +42,18 @@
                                     <label for="text">Apellido</label>
                                     <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-6">
                                     <label for="text">Numero de Tarjeta</label>
                                     <input type="text" class="form-control" id="tarjeta" placeholder="0000 0000 0000 0000" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="text">Seleccióna </label>
+                                    <select class="mdb-select md-form form-control">
+                                        <option selected="" >Selecciona una opcion</option>
+                                        <option value="100">1 Mes $100.00</option>
+                                        <option value="1,000">1 Año $1,000.00</option>
+                                        <option value="2,000">3 Años $2,000.00</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="text">Fecha de Expiracion</label>
@@ -61,7 +70,7 @@
                 </div>
             </div>
         </div>
-        
+
         <%@ include file="footer.jsp" %>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
