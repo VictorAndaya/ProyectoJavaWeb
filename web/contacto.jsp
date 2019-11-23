@@ -55,8 +55,7 @@
             </div>
         </div>
         
-        <%@ include file="footer.jsp" %>s
-        
+        <%@ include file="footer.jsp" %>
         <script src="js/main.js"></script>
         <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
     </body>

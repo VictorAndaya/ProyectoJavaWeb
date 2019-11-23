@@ -23,18 +23,40 @@
 
         <%@ include file="header.jsp" %>
 
-        <div class="container mt-2">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-md-8">
-                    <div class="contenido pl-4 pr-4">
-                        <h2>Sobre Nosotros</h2>
-                        
+        <div class="contenido pt-4">
+            <setion class="seccion">
+                <h2>Sobre Nosotros</h2>
+                <div class="testimoniales contenedor clearfix">
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
+                            <footer class="info-testimonial clearfix">
+                                <img src="img/kevin.jpg" alt="">
+                                <cite>Aguilar Gomez Kevin Ivan</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
+                            <footer class="info-testimonial clearfix">
+                                <img src="img/victor.jpg" alt="">
+                                <cite>Andaya Tabarez Victor Daniel</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
+                            <footer class="info-testimonial clearfix">
+                                <img src="img/arturo.jpg" alt="">
+                                <cite>Espinoza Herrera Arturo</cite>
+                            </footer>
+                        </blockquote>
                     </div>
                 </div>
-            </div>
+            </setion>
         </div>
-
-
         <%@ include file="footer.jsp" %>
 
     </body>

@@ -176,7 +176,7 @@
 
         <section class="precios seccion">
             <h2>Precios</h2>
-            <div class="contenedor">
+            <div class="contenedor contenedor-precios clearfix">
                 <ul class="lista-precios clearfix">
                     <div class="tabla-precio">
                         <h3>Pase por dia</h3>
@@ -207,41 +207,8 @@
             </div>
         </section>
 
-        <section class="seccion">
-            <h2>Testimoniales</h2>
-            <div class="testimoniales contenedor clearfix">
-                <div class="testimonial">
-                    <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
-                        <footer class="info-testimonial clearfix">
-                            <img src="img/testimonial.jpg" alt="">
-                            <cite>Arturo Espinoza</cite>
-                        </footer>
-                    </blockquote>
-                </div>
-                <div class="testimonial">
-                    <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
-                        <footer class="info-testimonial clearfix">
-                            <img src="img/testimonial.jpg" alt="">
-                            <cite>Arturo Espinoza</cite>
-                        </footer>
-                    </blockquote>
-                </div>
-                <div class="testimonial">
-                    <blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
-                        <footer class="info-testimonial clearfix">
-                            <img src="img/testimonial.jpg" alt="">
-                            <cite>Arturo Espinoza</cite>
-                        </footer>
-                    </blockquote>
-                </div>
-            </div>
-        </section>
-
         <div class="newsletter parallax">
-            <div class="contenido contenedor">
+            <div class="contenido contenedor clearfix">
                 <p>Registrate al newsletter</p>
                 <h3>Musica ITZ</h3>
                 <a href="#" class="button transparente">Registro</a>
@@ -250,7 +217,7 @@
 
         <section class="seccion">
             <h2>Faltan</h2>
-            <div class="cuenta-regresiva contenedor">
+            <div class="cuenta-regresiva contenedor ">
                 <ul class="clearfix">
                     <li><p id="dias" class="numeros"></p> dias</li>
                     <li><p id="horas" class="numeros"></p> horas</li>

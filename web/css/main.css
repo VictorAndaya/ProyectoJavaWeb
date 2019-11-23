@@ -715,6 +715,10 @@ div.mapa{
     background-color: green;
 }
 
+div.contenedor-precios{
+    padding-bottom: 20px;
+}
+
 /** Testimoniales **/
 div.testimoniales{
     padding-bottom: 20px;
@@ -740,7 +744,7 @@ blockquote p{
     text-align: left!important;
     font-size: 1em!important;
     font-family: 'PT Sans', sans-serif;
-    padding: 0 20px 0 65px;
+    padding: 10px 20px 0 65px;
 }
 blockquote p::before{
     content: '\201c';
@@ -753,6 +757,7 @@ blockquote p::before{
     line-height: 1;
     color: #fe4918;
 }
+
 footer.info-testimonial{
     padding: 0;
     background-color: transparent;
@@ -903,7 +908,11 @@ form .link:hover{
     border-color:#cc0000;
     background-color:#ffff99;
 }
-
+div.calendario::after{
+    clear: both;
+    display: block;
+    content: '';
+}
 
 div.dia{
     width: 50%;

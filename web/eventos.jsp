@@ -11,7 +11,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
         <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
-        <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
         <link href="css/all.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/all.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
@@ -19,22 +18,14 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet"> 
         <title>Eventos</title>
     </head>
-    <body>
-        
-        <%@ include file="header.jsp" %>
-        
-        <div class="container mt-2">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-md-12">
-                    <div class="contenido mt-4">
-                        <h2>Eventos</h2>
-                        <jsp:include page="ServletConsultaGeneral"/>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <body style="background-color: #ffffff;">
 
+        <%@ include file="header.jsp" %>
+        <div class="contenido pt-4">
+            <h2 class="">Eventos</h2>
+            <jsp:include page="ServletConsultaGeneral"/>
+        </div>
         <%@ include file="footer.jsp" %>
-        
+        <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
     </body>
 </html>
