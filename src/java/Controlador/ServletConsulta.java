@@ -18,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 /**
@@ -42,6 +43,11 @@ public class ServletConsulta extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        response.setHeader("Cache-control", "no-cache");
+        response.setHeader("Cache-control", "no-store");
+        response.setDateHeader("Expires", 0);
+
         PrintWriter out = response.getWriter();
         String qry, msg;
         Connection con = null;
@@ -55,16 +61,20 @@ public class ServletConsulta extends HttpServlet {
             }
             final String correo = request.getParameter("correo");
             final String pass = request.getParameter("contrasena");
+            final String nombre;
             qry = "SELECT nombre FROM usuarios where email='" + correo
                     + "' and contrasena='" + pass + "';";
             PreparedStatement pstmt = con.prepareStatement(qry);
             ResultSet results = pstmt.executeQuery();
             if (results.next()) {
-                response.sendRedirect("index.jsp"); 
-                //out.println("<h2>Bienvenido..." + results.getString("nombre") + "</h2>");
+                nombre = results.getString("nombre");
+                HttpSession sesionOk = request.getSession();
+                sesionOk.putValue("nombre", nombre);
+                response.sendRedirect("index.jsp");
             } else {
-                out.println("<h2>No coincide usuario y contraseña</h2>");
+                response.sendRedirect("login.jsp");
             }
+
         } catch (Exception e) {
             out.println("Error al procesar consulta" + e.getMessage() + "<br/>");
         } finally {
@@ -75,19 +85,19 @@ public class ServletConsulta extends HttpServlet {
             }
         }
         out.close();
-}
+    }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -101,7 +111,7 @@ public class ServletConsulta extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -112,7 +122,7 @@ public class ServletConsulta extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 

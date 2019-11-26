@@ -30,7 +30,7 @@
                 <div class="col-md-12">
                     <div class="contenido p-4">
                         <h2>Registrarme</h2>
-                        <form action="ServletInsercionATV" method="post" onsubmit="return validar();">
+                        <form action="ServletInsercionATV" method="post" onsubmit="return validarFormulario()">
                             <div id="error" class="error"></div>
                             <div class="row">
                                 <div class="form-group col-md-4">
@@ -39,11 +39,11 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text">Apellido Paterno</label>
-                                    <input type="text" class="form-control" name="apaterno" id="apellido" placeholder="Apellido Paterno" >
+                                    <input type="text" class="form-control" name="apaterno" id="apellidoP" placeholder="Apellido Paterno" >
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text">Apellido Materno</label>
-                                    <input type="text" class="form-control" name="amaterno" id="apellido" placeholder="Apellido Materno" >
+                                    <input type="text" class="form-control" name="amaterno" id="apellidoM" placeholder="Apellido Materno" >
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="email">Correo</label>

@@ -7,7 +7,6 @@ package Controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +18,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author andaya
  */
-@WebServlet(name = "Redireccion", urlPatterns = {"/Redireccion"})
-public class Redireccion extends HttpServlet {
+@WebServlet(name = "CerrarSesion", urlPatterns = {"/CerrarSesion"})
+public class CerrarSesion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,34 +33,11 @@ public class Redireccion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setHeader("Cache-control", "no-cache");
-        response.setHeader("Cache-control", "no-store");
-        response.setDateHeader("Expires", 0);
-
         HttpSession sesionOk;
         sesionOk = request.getSession();
-        String user = (String) sesionOk.getAttribute("Usuario");
-        String ubicacion = request.getParameter("pagina");
-
-        if (ubicacion.equals("nosotros")) {
-            response.sendRedirect("nosotros.jsp");
-        }
-
-        if (ubicacion.equals("login")) {
-            response.sendRedirect("login.jsp");
-        }
-        if (ubicacion.equals("suscribirme")) {
-            if (user != null) {
-                response.sendRedirect("suscribirme.jsp");
-            } else {
-                response.sendRedirect("login.jsp");
-            }
-        }
-        if (ubicacion.equals("eventos")) {
-            response.sendRedirect("eventos.jsp");
-        }
-        if (ubicacion.equals("contacto")) {
-            response.sendRedirect("contacto.jsp");
+        if (request.getParameter("cerrar") != null) {
+            sesionOk.invalidate();
+            response.sendRedirect("index.jsp");
         }
     }
 

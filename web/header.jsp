@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
         <title>Header</title>
     </head>
@@ -26,20 +27,48 @@
                     <span></span>
                     <span></span>
                 </div>
-                <nav class="navegacion-principal clearfix">
+                <nav class="navegacion-principal clearfix topnav">
                     <a href="Redireccion?pagina=eventos">Eventos</a>
                     <a href="Redireccion?pagina=nosotros">Nosotros</a>
                     <a href="Redireccion?pagina=contacto">Contacto</a>
                     <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
 
                     <!-- comparar si esta logeado y cambiar 'login' por nombre de usuario-->
+                    <%
+                        String user = (String) session.getAttribute("nombre");
 
+                        if (user != null) {
+
+                    %>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%out.print(user);%> <i style="font-size:24px" class="fa">&#xf2bd;</i></a>
+                    <div class="dropdown-menu ">
+                        <a href="CerrarSesion?cerrar=true" class="dropdown-item">Cerrar Sesión</a>
+                    </div>
+                    <!--<a href="Redireccion?pagina=login"><%out.print(user);%></a>-->
+                    <%
+                    } else {
+                    %>
                     <a href="Redireccion?pagina=login">login</a>
-                    
+                    <%
+                        }
+                    %>
                 </nav>
             </div>
         </div>
     </body>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </html>

@@ -29,7 +29,7 @@
                 <div class="testimoniales contenedor clearfix">
                     <div class="testimonial">
                         <blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
+                            <p>Soy una persona alegre, que le gusta conocer lugares y vivir nuevas experiencias día con día, el motivo de este proyecto parte de la necesidad de dar a conocer los diversos eventos musicales de la zona, así como ofrecer promociones y muchas cosas más que el usuario necesita.</p>
                             <footer class="info-testimonial clearfix">
                                 <img src="img/kevin.jpg" alt="">
                                 <cite>Aguilar Gomez Kevin Ivan</cite>
@@ -38,9 +38,9 @@
                     </div>
                     <div class="testimonial">
                         <blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, officiis, quos obcaecati voluptatum aperiam a ea rem eum placeat sit voluptatibus fugit quod in! Praesentium facilis possimus dolor pariatur obcaecati.</p>
+                            <p>Soy estudiante en ingeniería en sistemas computacionales de 7° semestre, me gusta la programación y el desarrollo web, es por ello que creamos este proyecto con la finalidad de ofrecer una revista de eventos musicales y promociones.</p>
                             <footer class="info-testimonial clearfix">
-                                <img src="img/victor.jpg" alt="">
+                                <img src="img/andaya.jpg" alt="">
                                 <cite>Andaya Tabarez Victor Daniel</cite>
                             </footer>
                         </blockquote>

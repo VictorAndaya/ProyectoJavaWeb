@@ -42,9 +42,7 @@ public class ServletConsultaGeneral extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setContentType("css/main.css;stylesheet;text/css");
-        response.setContentType("stylesheet;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-        
+
         PrintWriter out = response.getWriter();
         String qry;
         Connection con = null;
@@ -58,15 +56,49 @@ public class ServletConsultaGeneral extends HttpServlet {
             qry = "SELECT * FROM eventos;";
             PreparedStatement pstmt = con.prepareStatement(qry);
             ResultSet results = pstmt.executeQuery();
+
+            out.println("<section class=\"seccion contenedor\">");
+            out.println("<div class=\"contenido\">");
+            out.println("<div class=\"calendario\">");
             while (results.next()) {
                 out.println("<div class='dia'>");
                 out.println("<p class='titulo'>" + results.getString("nombreEvento") + "</p> "
                         + "<p><i style=\"font-size:24px\" class=\"fa\">&#xf073;</i> " + results.getString("fechaEvento") + "</p> "
                         + "<p class='hora'><i style=\"font-size:24px\" class=\"fa\">&#xf017;</i> " + results.getString("horaEvento") + "</p><br>");
-                
-                
                 out.println("</div>");
+
             }
+            out.println("</div>");
+            out.println("</div>");
+            out.println("</section>");
+            out.println("<footer class=\"site-footer\">\n"
+                    + "            <div class=\"contenedor clearfix\">\n"
+                    + "                <div class=\"footer-informacion\">\n"
+                    + "                    <h3>Sobre <span>Musica ITZ</span></h3>\n"
+                    + "                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae,rem excepturi eum ullam blanditiis expedita.</p>\n"
+                    + "\n"
+                    + "                </div>\n"
+                    + "                <div class=\"ultimos-tweets\">\n"
+                    + "                    <h3>Ultimos <span>Tweets</span></h3>\n"
+                    + "                    <ul>\n"
+                    + "                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. numquam facilis saepe quaerat laboriosam sed suscipit quibusdam autem dicta natus libero.</li>\n"
+                    + "\n"
+                    + "                    </ul>\n"
+                    + "                </div>\n"
+                    + "                <div class=\"menu\">\n"
+                    + "                    <h3>Redes <span>Sociales</span></h3>\n"
+                    + "                    <nav class=\"redes-sociales\">\n"
+                    + "                        <a href=\"\"><i class=\"fab fa-facebook\"></i></a>\n"
+                    + "                        <a href=\"\"><i class=\"fab fa-twitter\"></i></a>\n"
+                    + "                        <a href=\"\"><i class=\"fab fa-youtube\"></i></a>\n"
+                    + "                        <a href=\"\"><i class=\"fab fa-instagram\"></i></a>\n"
+                    + "                    </nav>\n"
+                    + "                </div>\n"
+                    + "            </div>\n"
+                    + "            <p class=\"copyright\">\n"
+                    + "                Todos los derechos Reservados Musica ITZ 2019.\n"
+                    + "            </p>\n"
+                    + "        </footer>");
         } catch (Exception e) {
             out.println("Error al procesar consulta" + e.getMessage() + "<br/>");
         } finally {

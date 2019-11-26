@@ -48,20 +48,18 @@ public class ServletInsercionATV extends HttpServlet {
         String aPaterno = request.getParameter("apaterno");
         String aMaterno = request.getParameter("amaterno");
         Connection conn = null; //conexion parcial
-        out.println("Prueba del registro del cliente <br/>");
+        
         try {
-            out.println("Probamos a recuperar la conexion <br/>");
             synchronized (fuenteDatos) {
                 conn = (Connection) fuenteDatos.getConnection();
                 if (conn == null) {
                     throw new ServletException("Problemas de conexion <br>");
                 }
-                out.println("<br/> Preparamos INSERT... <br/>");
                 Statement stmt = (Statement) conn.createStatement();
                 String qry = "insert into usuarios values ('" + Correo + "','" + password + "','" + Nombre + "','"
                         + aPaterno + "','" + aMaterno + "');";
                 int resultado = stmt.executeUpdate(qry);
-                out.println("Inserción exitosa");
+                response.sendRedirect("login.jsp");
             }
         } catch (Exception e) {
             out.println("Falla Inserción "+e.getMessage());
@@ -73,7 +71,7 @@ public class ServletInsercionATV extends HttpServlet {
                 throw new ServletException("Error en proceso" + e.getMessage() + "<br/>");
             }
         }
-        out.println("<br/>-Fin del servlet-"); //cerramos la respuesta
+        
         out.close();
     }
 

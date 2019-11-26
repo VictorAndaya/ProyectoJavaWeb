@@ -21,7 +21,7 @@
         <title>MUSICA ITZ</title>
     </head>
     <body>
-        
+
         <header class="site-header">
             <div class="hero">
                 <div class="contenido-header">
@@ -47,9 +47,18 @@
             </div>
 
         </header>
-        
+
         <%@ include file="header.jsp" %>
-        
+        <%            if (user != null) {
+
+        %>
+
+        <%@ include file="encuesta.jsp" %>
+
+        <%
+           }
+        %>
+
         <section class="seccion contenedor">
             <h2>Los Mejores Conciertos</h2>
             <p class="justificado">
@@ -126,37 +135,37 @@
                 <li>
                     <div class="invitado">
                         <img src="img/invitado1.jpg" alt="imagen invitado">
-                        <p>Rafael Bautista</p>
+                        <p>Bad Ways</p>
                     </div>
                 </li>
                 <li>
                     <div class="invitado">
                         <img src="img/invitado2.jpg" alt="imagen invitado">
-                        <p>Rafael Bautista</p>
+                        <p>Luis Miguel</p>
                     </div>
                 </li>
                 <li>
                     <div class="invitado">
                         <img src="img/invitado3.jpg" alt="imagen invitado">
-                        <p>Rafael Bautista</p>
+                        <p>Emanuel</p>
                     </div>
                 </li>
                 <li>
                     <div class="invitado">
                         <img src="img/invitado4.jpg" alt="imagen invitado">
-                        <p>Rafael Bautista</p>
+                        <p>Maroon 5</p>
                     </div>
                 </li>
                 <li>
                     <div class="invitado">
                         <img src="img/invitado5.jpg" alt="imagen invitado">
-                        <p>Rafael Bautista</p>
+                        <p>Mon Laferte</p>
                     </div>
                 </li>
                 <li>
                     <div class="invitado">
                         <img src="img/invitado6.jpg" alt="imagen invitado">
-                        <p>Rafael Bautista</p>
+                        <p>Siddhartha</p>
                     </div>
                 </li>
             </ul>
@@ -183,7 +192,7 @@
                         <p class="numeros">$300</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
-                        <a href="suscribirme.jsp" class="button hollow">Comprar</a>
+                        <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
                     </div>
                 </ul>
                 <ul class="lista-precios clearfix">
@@ -192,7 +201,7 @@
                         <p class="numeros">$900</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
-                        <a href="suscribirme.jsp" class="button hollow">Comprar</a>
+                        <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
                     </div>
                 </ul>
                 <ul class="lista-precios clearfix">
@@ -201,7 +210,7 @@
                         <p class="numeros">$500</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
-                        <a href="suscribirme.jsp" class="button hollow">Comprar</a>
+                        <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
                     </div>
                 </ul>
             </div>

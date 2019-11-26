@@ -25,7 +25,6 @@
             <h2 class="">Eventos</h2>
             <jsp:include page="ServletConsultaGeneral"/>
         </div>
-        <%@ include file="footer.jsp" %>
         <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
     </body>
 </html>
