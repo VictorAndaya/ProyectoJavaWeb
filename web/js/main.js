@@ -145,8 +145,8 @@ $(function () {
 
 });
 
-function validarFormulario() {
 
+function validarFormulario() {
     var txtNombre = document.getElementById('nombre').value;
     var txtApellidoP = document.getElementById('apellidoP').value;
     var txtApellidoM = document.getElementById('apellidoM').value;
@@ -154,16 +154,9 @@ function validarFormulario() {
     var txtPwd = document.getElementById('txtPassword').value;
     var txtPwd2 = document.getElementById('txtPassword2').value;
 
-//    var txtFecha = document.getElementById('fecha').value;
-//    var cmbSelector = document.getElementById('selector').selectedIndex;
-//    var chkEstado = document.getElementById('checkBox');
-//    var rbtEstado = document.getElementsByName('radioButton');
-
-//    var banderaRBTN = false;
-
     //Test campo obligatorio
     if (txtNombre === null || txtNombre.length === 0 || /^\s+$/.test(txtNombre)) {
-        alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+        alert('ERROR: El campo Nombre no debe ir vacío o lleno de solamente espacios en blanco');
         return false;
     }
 
@@ -182,7 +175,7 @@ function validarFormulario() {
         alert('ERROR: Debe escribir un correo válido');
         return false;
     }
-    
+
     //Test campo obligatorio
     if (txtPwd === null || txtPwd.length === 0 || /^\s+$/.test(txtPwd)) {
         alert('ERROR: El campo contraseña no debe ir vacío o lleno de solamente espacios en blanco');
@@ -193,53 +186,10 @@ function validarFormulario() {
         alert('ERROR: El segundo campo contraseña no debe ir vacío o lleno de solamente espacios en blanco');
         return false;
     }
-    
-    if (txtPwd !== txtPwd2){
+
+    if (txtPwd !== txtPwd2) {
         alert('ERROR: Las contraseñas no coinciden');
         return false;
     }
-    
-    
-    
-    
-
-//    //Test edad
-//    if (txtEdad == null || txtEdad.length == 0 || isNaN(txtEdad)) {
-//        alert('ERROR: Debe ingresar una edad');
-//        return false;
-//    }
-
-//
-//
-//    //Test fecha
-//    if (!isNaN(txtFecha)) {
-//        alert('ERROR: Debe elegir una fecha');
-//        return false;
-//    }
-//
-//    //Test comboBox
-//    if (cmbSelector == null || cmbSelector == 0) {
-//        alert('ERROR: Debe seleccionar una opcion del combo box');
-//        return false;
-//    }
-//
-//    //Test checkBox
-//    if (!chkEstado.checked) {
-//        alert('ERROR: Debe seleccionar el checkbox');
-//        return false;
-//    }
-//
-//    //Test RadioButtons
-//    for (var i = 0; i < rbtEstado.length; i++) {
-//        if (rbtEstado[i].checked) {
-//            banderaRBTN = true;
-//            break;
-//        }
-//    }
-//    if (!banderaRBTN) {
-//        alert('ERROR: Debe elegir una opción de radio button');
-//        return false;
-//    }
-
     return true;
 }

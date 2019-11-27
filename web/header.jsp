@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="cache.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +32,7 @@
                     <a href="Redireccion?pagina=eventos">Eventos</a>
                     <a href="Redireccion?pagina=nosotros">Nosotros</a>
                     <a href="Redireccion?pagina=contacto">Contacto</a>
-                    <a href="Redireccion?pagina=suscribirme">Suscribirme</a>
+                    
 
                     <!-- comparar si esta logeado y cambiar 'login' por nombre de usuario-->
                     <%
@@ -40,15 +41,17 @@
                         if (user != null) {
 
                     %>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%out.print(user);%> <i style="font-size:24px" class="fa">&#xf2bd;</i></a>
+                    <a href="Redireccion?pagina=suscribirme" class="dropdown-item">Suscribirme</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=user%> <i style="font-size:24px" class="fa">&#xf2bd;</i></a>
                     <div class="dropdown-menu ">
-                        <a href="CerrarSesion?cerrar=true" class="dropdown-item">Cerrar Sesión</a>
+                        <a href="CerrarSesion?cerrar=true" class="dropdown-item">Cerrar Sesión </a>
                     </div>
-                    <!--<a href="Redireccion?pagina=login"><%out.print(user);%></a>-->
+                    
                     <%
                     } else {
                     %>
-                    <a href="Redireccion?pagina=login">login</a>
+                    <a href="Redireccion?pagina=registro">Registrarme</a>
+                    <a href="Redireccion?pagina=login">Login</a>
                     <%
                         }
                     %>
@@ -56,16 +59,6 @@
             </div>
         </div>
     </body>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

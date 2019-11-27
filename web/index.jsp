@@ -50,13 +50,11 @@
 
         <%@ include file="header.jsp" %>
         <%            if (user != null) {
-
         %>
 
         <%@ include file="encuesta.jsp" %>
 
-        <%
-           }
+        <%            }
         %>
 
         <section class="seccion contenedor">
@@ -192,7 +190,13 @@
                         <p class="numeros">$300</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
+                        <%
+                        if (user != null) {
+                        %>
                         <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
+                        <%
+                        }
+                        %>
                     </div>
                 </ul>
                 <ul class="lista-precios clearfix">
@@ -201,7 +205,13 @@
                         <p class="numeros">$900</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
+                        <%
+                        if (user != null) {
+                        %>
                         <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
+                        <%
+                        }
+                        %>
                     </div>
                 </ul>
                 <ul class="lista-precios clearfix">
@@ -210,7 +220,13 @@
                         <p class="numeros">$500</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
+                        <%
+                        if (user != null) {
+                        %>
                         <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
+                        <%
+                        }
+                        %>
                     </div>
                 </ul>
             </div>

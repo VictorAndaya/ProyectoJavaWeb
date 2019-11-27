@@ -46,16 +46,14 @@ public class Redireccion extends HttpServlet {
         if (ubicacion.equals("nosotros")) {
             response.sendRedirect("nosotros.jsp");
         }
-
         if (ubicacion.equals("login")) {
             response.sendRedirect("login.jsp");
         }
         if (ubicacion.equals("suscribirme")) {
-            if (user != null) {
-                response.sendRedirect("suscribirme.jsp");
-            } else {
-                response.sendRedirect("login.jsp");
-            }
+            response.sendRedirect("suscribirme.jsp");
+        }
+        if (ubicacion.equals("registro")) {
+            response.sendRedirect("registro.jsp");
         }
         if (ubicacion.equals("eventos")) {
             response.sendRedirect("eventos.jsp");

@@ -149,7 +149,7 @@ h2{
     font-size: 2.4em;
     text-transform: uppercase;
     text-align: center;
-    
+
 }
 h2:after{
     content: '';
@@ -314,7 +314,7 @@ h1.nombre-sitio{
     }
 }
 .arrow{
-    padding-top: 400px;
+    padding-top: 60vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -945,6 +945,9 @@ div.dia p{
 div.dia i{
     color: #fe4918;
     font-size: 1.6em;
+}
+#error{
+    clear: both;
 }
 /* ==========================================================================
    Helper classes

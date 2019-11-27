@@ -20,9 +20,13 @@
         <title>Inicia Sesión</title>
     </head>
     <body>
-        
-        <%@ include file="header.jsp" %>
 
+        <%@ include file="header.jsp" %>
+        <%
+            if(user != null){
+                response.sendRedirect("index.jsp");
+            }
+        %>
         <div class="container mt-2">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
@@ -55,7 +59,7 @@
         </div>
 
         <%@ include file="footer.jsp" %>
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/main.js" type="text/javascript"></script>
         <script src="js/vendor/modernizr-3.7.1.min.js" type="text/javascript"></script>
