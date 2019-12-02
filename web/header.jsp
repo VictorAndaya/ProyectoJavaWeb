@@ -37,7 +37,7 @@
                     <!-- comparar si esta logeado y cambiar 'login' por nombre de usuario-->
                     <%
                         String user = (String) session.getAttribute("nombre");
-
+                        String email = (String) session.getAttribute("email");
                         if (user != null) {
 
                     %>

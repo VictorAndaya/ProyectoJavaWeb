@@ -49,14 +49,10 @@
         </header>
 
         <%@ include file="header.jsp" %>
-        <%            if (user != null) {
-        %>
+
 
         <%@ include file="encuesta.jsp" %>
-
-        <%            }
-        %>
-
+        
         <section class="seccion contenedor">
             <h2>Los Mejores Conciertos</h2>
             <p class="justificado">
@@ -190,12 +186,12 @@
                         <p class="numeros">$300</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
-                        <%
-                        if (user != null) {
-                        %>
+                            <%
+                                if (user != null) {
+                            %>
                         <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
                         <%
-                        }
+                            }
                         %>
                     </div>
                 </ul>
@@ -205,12 +201,12 @@
                         <p class="numeros">$900</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
-                        <%
-                        if (user != null) {
-                        %>
+                            <%
+                                if (user != null) {
+                            %>
                         <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
                         <%
-                        }
+                            }
                         %>
                     </div>
                 </ul>
@@ -220,12 +216,12 @@
                         <p class="numeros">$500</p>
                         <li>Camiseta Gratis</li>
                         <li>Todos los Conciertos</li>
-                        <%
-                        if (user != null) {
-                        %>
+                            <%
+                                if (user != null) {
+                            %>
                         <a href="Redireccion?pagina=suscribirme" class="button hollow">Comprar</a>
                         <%
-                        }
+                            }
                         %>
                     </div>
                 </ul>

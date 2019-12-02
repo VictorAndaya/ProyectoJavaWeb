@@ -47,12 +47,6 @@ public class ServletInsercionATV extends HttpServlet {
         String Nombre = request.getParameter("nombre");
         String aPaterno = request.getParameter("apaterno");
         String aMaterno = request.getParameter("amaterno");
-        
-        String pregunta1 = request.getParameter("pregunta1");
-        String pregunta2 = request.getParameter("pregunta2");
-        String pregunta3 = request.getParameter("pregunta3");
-        String pregunta4 = request.getParameter("pregunta4");
-        String comentarios = request.getParameter("comentarios");
         Connection conn = null; //conexion parcial
         
         try {
@@ -64,10 +58,7 @@ public class ServletInsercionATV extends HttpServlet {
                 Statement stmt = (Statement) conn.createStatement();
                 String qry = "insert into usuarios values ('" + Correo + "','" + password + "','" + Nombre + "','"
                         + aPaterno + "','" + aMaterno + "');";
-                String qry2 = "insert into encuesta (pregunta1, pregunta2, pregunta3, pregunta4, comen) values ('" + pregunta1 + "','" + pregunta2 + "','" + pregunta3 + "','"
-                        + pregunta4 + "','" + comentarios + "');";
                 stmt.executeUpdate(qry);
-                stmt.executeUpdate(qry2);
                 response.sendRedirect("login.jsp");
             }
         } catch (Exception e) {

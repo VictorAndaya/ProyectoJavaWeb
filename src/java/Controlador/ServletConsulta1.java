@@ -25,8 +25,8 @@ import javax.sql.DataSource;
  *
  * @author andaya
  */
-@WebServlet(name = "ServletConsulta", urlPatterns = {"/ServletConsulta"})
-public class ServletConsulta extends HttpServlet {
+@WebServlet(name = "ServletConsulta1", urlPatterns = {"/ServletConsulta1"})
+public class ServletConsulta1 extends HttpServlet {
 
     private DataSource fuenteDatos = null;
 
@@ -43,7 +43,7 @@ public class ServletConsulta extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         response.setHeader("Cache-control", "no-cache");
         response.setHeader("Cache-control", "no-store");
         response.setDateHeader("Expires", 0);
@@ -59,24 +59,42 @@ public class ServletConsulta extends HttpServlet {
                 out.println("Error al recuperar la conexion, es nula <br/>");
                 throw new ServletException("Problemas con la conexion <br/>");
             }
-            final String correo = request.getParameter("correo");
-            final String pass = request.getParameter("contrasena");
-            final String nombre;
-            final String email;
-            qry = "SELECT nombre,email FROM usuarios where email='" + correo
-                    + "' and contrasena='" + pass + "';";
-            //qry2 = "SELECT nombreEncuesta,pregunta1,pregunta2,mes FROM encuestaP ;";
+            String nombreEncuesta;
+            String pregunta1;
+            String pregunta2;
+            String opcion1;
+            String opcion2;
+            String opcion3;
+            String opcion4;
+            String opcion5;
+            String opcion6;
+            String mes = request.getParameter("meses");
+            
+            qry = "SELECT nombreEncuesta,pregunta1,pregunta2,opcion1,opcion2,opcion3,opcion4,opcion5,opcion6 FROM encuestaP where mes = '" + mes + "';";
             PreparedStatement pstmt = con.prepareStatement(qry);
             ResultSet results = pstmt.executeQuery();
             if (results.next()) {
-                nombre = results.getString("nombre");
-                email = results.getString("email");
-                
+                nombreEncuesta = results.getString("");
+                pregunta1 = results.getString("");
+                pregunta2 = results.getString("");
+                opcion1 = results.getString("");
+                opcion2 = results.getString("");
+                opcion3 = results.getString("");
+                opcion4 = results.getString("");
+                opcion5 = results.getString("");
+                opcion6 = results.getString("");
+
                 HttpSession sesionOk = request.getSession();
-                sesionOk.putValue("nombre", nombre);
-                sesionOk.putValue("email", email);
-                
-                
+                sesionOk.putValue("nombreEncuesta", nombreEncuesta);
+                sesionOk.putValue("pregunta1", pregunta1);
+                sesionOk.putValue("pregunta2", pregunta2);
+                sesionOk.putValue("opcion1", opcion1);
+                sesionOk.putValue("opcion2", opcion2);
+                sesionOk.putValue("opcion3", opcion3);
+                sesionOk.putValue("opcion4", opcion4);
+                sesionOk.putValue("opcion5", opcion5);
+                sesionOk.putValue("opcion6", opcion6);
+
                 response.sendRedirect("index.jsp");
             } else {
                 response.sendRedirect("login.jsp");

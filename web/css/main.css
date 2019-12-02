@@ -403,8 +403,6 @@ div.logo img{
     left: 0;
     z-index: 2;
 }
-
-
 /* Navegacion Principal **/
 nav.navegacion-principal{
     display: none;
@@ -948,6 +946,31 @@ div.dia i{
 }
 #error{
     clear: both;
+}
+button.btn{
+    color: black;
+}
+button.btn:hover{
+    color: white;
+}
+.card-header:hover{
+    background: #C4C1C1; 
+}
+.radio{
+    padding: 8px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.radio:hover{
+    background: #C4C1C1;
+    color: white;
+}
+.in{
+    background: #f1f1f1; 
+}
+.agregar{
+    background: #f1f1f1; 
 }
 /* ==========================================================================
    Helper classes

@@ -5,11 +5,10 @@
  */
 package Controlador;
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.ServletConfig;
@@ -18,79 +17,61 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 /**
  *
  * @author andaya
  */
-@WebServlet(name = "ServletConsulta", urlPatterns = {"/ServletConsulta"})
-public class ServletConsulta extends HttpServlet {
+@WebServlet(name = "ServletInsercionATV1", urlPatterns = {"/ServletInsercionATV1"})
+public class ServletInsercionATV1 extends HttpServlet {
 
     private DataSource fuenteDatos = null;
 
-    public void init(ServletConfig config)
-            throws ServletException {
+    @Override
+    public void init(ServletConfig config) throws ServletException {
         try {
             Context ctx = new InitialContext();
             fuenteDatos = (DataSource) ctx.lookup("java:comp/env/jdbc/ejemploBD");
         } catch (Exception e) {
-            throw new ServletException("Irrecuperable java:comp/env/jdbc/ejemploBD", e);
+            throw new ServletException("imposible recuperar fuente de datos");
         }
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        response.setHeader("Cache-control", "no-cache");
-        response.setHeader("Cache-control", "no-store");
-        response.setDateHeader("Expires", 0);
-
         PrintWriter out = response.getWriter();
-        String qry, msg;
-        Connection con = null;
+        
+        String respuesta1 = request.getParameter("pregunta1");
+        String respuesta2 = request.getParameter("pregunta2");
+        String comentarios = request.getParameter("comentarios");
+        String email = request.getParameter("email");
+        String nombreEncu = request.getParameter("nombreEncu");
+        Connection conn = null; //conexion parcial
+        
         try {
             synchronized (fuenteDatos) {
-                con = fuenteDatos.getConnection();
-            }
-            if (con == null) {
-                out.println("Error al recuperar la conexion, es nula <br/>");
-                throw new ServletException("Problemas con la conexion <br/>");
-            }
-            final String correo = request.getParameter("correo");
-            final String pass = request.getParameter("contrasena");
-            final String nombre;
-            final String email;
-            qry = "SELECT nombre,email FROM usuarios where email='" + correo
-                    + "' and contrasena='" + pass + "';";
-            //qry2 = "SELECT nombreEncuesta,pregunta1,pregunta2,mes FROM encuestaP ;";
-            PreparedStatement pstmt = con.prepareStatement(qry);
-            ResultSet results = pstmt.executeQuery();
-            if (results.next()) {
-                nombre = results.getString("nombre");
-                email = results.getString("email");
-                
-                HttpSession sesionOk = request.getSession();
-                sesionOk.putValue("nombre", nombre);
-                sesionOk.putValue("email", email);
-                
-                
-                response.sendRedirect("index.jsp");
-            } else {
+                conn = (Connection) fuenteDatos.getConnection();
+                if (conn == null) {
+                    throw new ServletException("Problemas de conexion <br>");
+                }
+                Statement stmt = (Statement) conn.createStatement();
+                String qry = "insert into encuesta (respuesta1, respuesta2, comen, email, nombreEncuesta) values ('" + respuesta1 + "','" + respuesta2 + "','" + comentarios + "','" + email + "','" + nombreEncu + "');";
+                stmt.executeUpdate(qry);
                 response.sendRedirect("login.jsp");
             }
-
         } catch (Exception e) {
-            out.println("Error al procesar consulta" + e.getMessage() + "<br/>");
+            out.println("Falla Inserción "+e.getMessage());
+
         } finally {
             try {
-                con.close();
+                conn.close();
             } catch (Exception e) {
-                out.println("Error en proceso" + e.getMessage() + "<br/>");
+                throw new ServletException("Error en proceso" + e.getMessage() + "<br/>");
             }
         }
+        
         out.close();
     }
 
@@ -111,7 +92,7 @@ public class ServletConsulta extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     *
+     *conn
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
