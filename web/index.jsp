@@ -49,9 +49,6 @@
         </header>
 
         <%@ include file="header.jsp" %>
-
-
-        <%@ include file="encuesta.jsp" %>
         
         <section class="seccion contenedor">
             <h2>Los Mejores Conciertos</h2>

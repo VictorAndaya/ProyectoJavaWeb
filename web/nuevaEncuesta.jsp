@@ -22,7 +22,11 @@
     <body>
 
         <%@ include file="header.jsp" %>
-
+        <%
+            if(user == null){
+                response.sendRedirect("index.jsp");
+            }
+        %>
         <div class="contenido">
             <setion class="seccion row align-items-center justify-content-center">
                 <div class="col-md-8 agregar pt-2">

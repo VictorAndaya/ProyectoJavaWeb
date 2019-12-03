@@ -68,36 +68,47 @@ public class ServletConsulta1 extends HttpServlet {
             String opcion4;
             String opcion5;
             String opcion6;
-            String mes = request.getParameter("meses");
-            
-            qry = "SELECT nombreEncuesta,pregunta1,pregunta2,opcion1,opcion2,opcion3,opcion4,opcion5,opcion6 FROM encuestaP where mes = '" + mes + "';";
+            String mes;
+
+            qry = "SELECT * FROM encuestaP where mes <> 'Diciembre';";
             PreparedStatement pstmt = con.prepareStatement(qry);
             ResultSet results = pstmt.executeQuery();
-            if (results.next()) {
-                nombreEncuesta = results.getString("");
-                pregunta1 = results.getString("");
-                pregunta2 = results.getString("");
-                opcion1 = results.getString("");
-                opcion2 = results.getString("");
-                opcion3 = results.getString("");
-                opcion4 = results.getString("");
-                opcion5 = results.getString("");
-                opcion6 = results.getString("");
 
-                HttpSession sesionOk = request.getSession();
-                sesionOk.putValue("nombreEncuesta", nombreEncuesta);
-                sesionOk.putValue("pregunta1", pregunta1);
-                sesionOk.putValue("pregunta2", pregunta2);
-                sesionOk.putValue("opcion1", opcion1);
-                sesionOk.putValue("opcion2", opcion2);
-                sesionOk.putValue("opcion3", opcion3);
-                sesionOk.putValue("opcion4", opcion4);
-                sesionOk.putValue("opcion5", opcion5);
-                sesionOk.putValue("opcion6", opcion6);
+            while (results.next()) {
+                nombreEncuesta = results.getString("nombreEncuesta");
+                pregunta1 = results.getString("pregunta1");
+                pregunta2 = results.getString("pregunta2");
+                opcion1 = results.getString("opcion1");
+                opcion2 = results.getString("opcion2");
+                opcion3 = results.getString("opcion3");
+                opcion4 = results.getString("opcion4");
+                opcion5 = results.getString("opcion5");
+                opcion6 = results.getString("opcion6");
+                mes = results.getString("mes");
 
-                response.sendRedirect("index.jsp");
-            } else {
-                response.sendRedirect("login.jsp");
+                out.print("<div class=\"card\">\n"
+                        + "                                <div class=\"card-header\" id=\"headingOne\">\n"
+                        + "                                    <h5 class=\"mb-0\">\n"
+                        + "                                        <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#" + mes + "\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n"
+                        + "                                            Encuesta de: " + mes + "\n"
+                        + "                                        </button>\n"
+                        + "                                    </h5>\n"
+                        + "                                </div>\n"
+                        + "                                <div id=\"" + mes + "\" class=\"collapse collapsed\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\">\n"
+                        + "                                    <div class=\"card-body\">\n"
+                        + "                                        <h3 class=\"text-center\">" + nombreEncuesta + "</h3><br>\n"
+                        + "                                        <label> " + pregunta1 + "</label><br>\n"
+                        + "                                        <label><i style=\"font-size:16px\" class=\"fa\">&#xf058;</i> " + opcion1 + "</label><br>\n"
+                        + "                                        <label><i style=\"font-size:16px\" class=\"fa\">&#xf058;</i> " + opcion2 + "</label><br>\n"
+                        + "                                        <label><i style=\"font-size:16px\" class=\"fa\">&#xf058;</i> " + opcion3 + "</label><br>\n"
+                        + "                                        <label> " + pregunta2 + "</label><br>\n"
+                        + "                                        <label><i style=\"font-size:16px\" class=\"fa\">&#xf058;</i> " + opcion4 + "</label><br>\n"
+                        + "                                        <label><i style=\"font-size:16px\" class=\"fa\">&#xf058;</i> " + opcion5 + "</label><br>\n"
+                        + "                                        <label><i style=\"font-size:16px\" class=\"fa\">&#xf058;</i> " + opcion6 + "</label><br>\n"
+                        + "                                    </div>\n"
+                        + "                                </div>\n"
+                        + "                            </div>");
+                
             }
 
         } catch (Exception e) {

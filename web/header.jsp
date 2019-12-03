@@ -32,24 +32,32 @@
                     <a href="Redireccion?pagina=eventos">Eventos</a>
                     <a href="Redireccion?pagina=nosotros">Nosotros</a>
                     <a href="Redireccion?pagina=contacto">Contacto</a>
-                    
-
+                    <a href="Redireccion?pagina=encuesta">Encuesta</a>
                     <!-- comparar si esta logeado y cambiar 'login' por nombre de usuario-->
-                    <%
-                        String user = (String) session.getAttribute("nombre");
+                    <%                        String user = (String) session.getAttribute("nombre");
                         String email = (String) session.getAttribute("email");
+                        String nombreEncus = (String) session.getAttribute("nombreEncuesta");
+                        
                         if (user != null) {
+                    %>
 
-                    %>
                     <a href="Redireccion?pagina=suscribirme" class="dropdown-item">Suscribirme</a>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=user%> <i style="font-size:24px" class="fa">&#xf2bd;</i></a>
-                    <div class="dropdown-menu ">
-                        <a href="CerrarSesion?cerrar=true" class="dropdown-item">Cerrar Sesión </a>
-                    </div>
-                    
+                    <a href="#" data-toggle="dropdown"><%=user%> <i style="font-size:24px" class="fa">&#xf2bd;</i></a>
+                    <a href="CerrarSesion?cerrar=true" class="dropdown-item">Log Out</a>
+
                     <%
-                    } else {
+                        Integer tipo = (Integer) session.getAttribute("tipo");
+                        if (tipo != 0) {
                     %>
+                    <a href="nuevaEncuesta.jsp" class="dropdown-item">Nueva Encuesta</a>
+                    <%
+                            }
+                    %>
+
+                    <%                    
+                            } else {
+                    %>
+
                     <a href="Redireccion?pagina=registro">Registrarme</a>
                     <a href="Redireccion?pagina=login">Login</a>
                     <%

@@ -63,19 +63,20 @@ public class ServletConsulta extends HttpServlet {
             final String pass = request.getParameter("contrasena");
             final String nombre;
             final String email;
-            qry = "SELECT nombre,email FROM usuarios where email='" + correo
+            final Integer tipo;
+            qry = "SELECT nombre,email,tipo FROM usuarios where email='" + correo
                     + "' and contrasena='" + pass + "';";
-            //qry2 = "SELECT nombreEncuesta,pregunta1,pregunta2,mes FROM encuestaP ;";
             PreparedStatement pstmt = con.prepareStatement(qry);
             ResultSet results = pstmt.executeQuery();
             if (results.next()) {
                 nombre = results.getString("nombre");
                 email = results.getString("email");
+                tipo = results.getInt("tipo");
                 
                 HttpSession sesionOk = request.getSession();
-                sesionOk.putValue("nombre", nombre);
-                sesionOk.putValue("email", email);
-                
+                sesionOk.setAttribute("nombre", nombre);
+                sesionOk.setAttribute("email", email);
+                sesionOk.setAttribute("tipo", tipo);
                 
                 response.sendRedirect("index.jsp");
             } else {

@@ -130,7 +130,7 @@ body{
     .contenedor{
         width: 90%;
         margin: 0 auto;
-        max-width: 1100px;
+        max-width: 1200px;
     }
 }
 .seccion{
@@ -411,7 +411,7 @@ nav.navegacion-principal{
 nav.navegacion-principal a{
     font-family: 'Oswald', sans-serif;
     color: #ffffff;
-    font-size: 1.3em;
+    font-size: 1em;
     text-transform: uppercase;
     text-decoration: none;
     transition: all .6s ease;
@@ -970,7 +970,7 @@ button.btn:hover{
     background: #f1f1f1; 
 }
 .agregar{
-    background: #f1f1f1; 
+    background: white; 
 }
 /* ==========================================================================
    Helper classes
