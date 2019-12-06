@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.servlet.http.HttpSession;
 
 public class ConsultaEncuestas {
 

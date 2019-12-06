@@ -388,7 +388,7 @@ div.logo{
 div.logo img{
     width: 100%;
     float: left;
-    padding-top: 5px;
+    padding-top: 1px;
 }
 @media only screen and (min-width:768px){
     div.logo img{
@@ -439,7 +439,7 @@ nav.navegacion-principal a:last-child:hover{
         display: block;
     }
     nav.navegacion-principal a{
-        padding: 10px 10px;
+        padding: 12px 5px;
         display: inline-block;
         width: auto;
         display: inline-block;
@@ -453,7 +453,7 @@ div.menu-movil{
     display: block;
     float: right;
     text-align: right;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 div.menu-movil:hover{
     cursor: pointer;

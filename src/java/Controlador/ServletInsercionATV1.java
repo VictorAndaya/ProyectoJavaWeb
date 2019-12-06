@@ -59,7 +59,7 @@ public class ServletInsercionATV1 extends HttpServlet {
                 Statement stmt = (Statement) conn.createStatement();
                 String qry = "insert into encuesta (respuesta1, respuesta2, comen, email, nombreEncuesta) values ('" + respuesta1 + "','" + respuesta2 + "','" + comentarios + "','" + email + "','" + nombreEncu + "');";
                 stmt.executeUpdate(qry);
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("encuesta.jsp");
             }
         } catch (Exception e) {
             out.println("Falla Inserción "+e.getMessage());
@@ -72,7 +72,7 @@ public class ServletInsercionATV1 extends HttpServlet {
             }
         }
         
-        out.close();
+        //out.close();
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

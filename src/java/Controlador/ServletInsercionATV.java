@@ -57,7 +57,7 @@ public class ServletInsercionATV extends HttpServlet {
                 }
                 Statement stmt = (Statement) conn.createStatement();
                 String qry = "insert into usuarios values ('" + Correo + "','" + password + "','" + Nombre + "','"
-                        + aPaterno + "','" + aMaterno + "');";
+                        + aPaterno + "','" + aMaterno + "','0');";
                 stmt.executeUpdate(qry);
                 response.sendRedirect("login.jsp");
             }

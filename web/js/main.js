@@ -156,39 +156,56 @@ function validarFormulario() {
 
     //Test campo obligatorio
     if (txtNombre === null || txtNombre.length === 0 || /^\s+$/.test(txtNombre)) {
-        alert('ERROR: El campo Nombre no debe ir vacío o lleno de solamente espacios en blanco');
+        swal("¡Error!","El campo Nombre no debe ir vacío o lleno de solamente espacios en blanco!", "error");
         return false;
     }
 
     if (txtApellidoP === null || txtApellidoP.length === 0 || /^\s+$/.test(txtApellidoP)) {
-        alert('ERROR: El campo Apellido Paterno no debe ir vacío o lleno de solamente espacios en blanco');
+        swal("¡Error!","El campo Apellido Paterno no debe ir vacío o lleno de solamente espacios en blanco!", "error");
         return false;
     }
 
     if (txtApellidoM === null || txtApellidoM.length === 0 || /^\s+$/.test(txtApellidoM)) {
-        alert('ERROR: El campo Apellido Materno no debe ir vacío o lleno de solamente espacios en blanco');
+        swal("¡Error!","El campo Apellido Materno no debe ir vacío o lleno de solamente espacios en blanco!", "error");
         return false;
     }
 
     //Test correo
     if (!(/\S+@\S+\.\S+/.test(txtCorreo))) {
-        alert('ERROR: Debe escribir un correo válido');
+        swal("¡Error!","Debe escribir un correo válido!", "error");
         return false;
     }
 
     //Test campo obligatorio
     if (txtPwd === null || txtPwd.length === 0 || /^\s+$/.test(txtPwd)) {
-        alert('ERROR: El campo contraseña no debe ir vacío o lleno de solamente espacios en blanco');
+        swal("¡Error!","El campo contraseña no debe ir vacío o lleno de solamente espacios en blanco!", "error");
         return false;
     }
     //Test campo obligatorio
     if (txtPwd2 === null || txtPwd2.length === 0 || /^\s+$/.test(txtPwd2)) {
-        alert('ERROR: El segundo campo contraseña no debe ir vacío o lleno de solamente espacios en blanco');
+        swal("¡Error!","El segundo campo contraseña no debe ir vacío o lleno de solamente espacios en blanco!", "error");
         return false;
     }
 
     if (txtPwd !== txtPwd2) {
-        alert('ERROR: Las contraseñas no coinciden');
+        swal("¡Error!","Las contraseñas no coinciden!", "error");
+        return false;
+    }
+    return true;
+}
+function validarFormularioLogin() {
+    var txtCorreo = document.getElementById('email').value;
+    var txtPwd = document.getElementById('txtPassword').value;
+
+    //Test correo
+    if (!(/\S+@\S+\.\S+/.test(txtCorreo))) {
+        swal("¡Error!","Debe escribir un correo válido!", "error");
+        return false;
+    }
+
+    //Test campo obligatorio
+    if (txtPwd === null || txtPwd.length === 0 || /^\s+$/.test(txtPwd)) {
+        swal("¡Error!","El campo contraseña no debe ir vacío o lleno de solamente espacios en blanco!", "error");
         return false;
     }
     return true;

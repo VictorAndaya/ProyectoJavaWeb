@@ -12,22 +12,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 /**
  *
  * @author andaya
  */
-@WebServlet(name = "ServletConsulta", urlPatterns = {"/ServletConsulta"})
-public class ServletConsulta extends HttpServlet {
+@WebServlet(name = "ServletConsulta2", urlPatterns = {"/ServletConsulta2"})
+public class ServletConsulta2 extends HttpServlet {
 
     private DataSource fuenteDatos = null;
 
@@ -37,7 +35,7 @@ public class ServletConsulta extends HttpServlet {
             Context ctx = new InitialContext();
             fuenteDatos = (DataSource) ctx.lookup("java:comp/env/jdbc/ejemploBD");
         } catch (Exception e) {
-            throw new ServletException("Irrecuperable java:comp/env/jdbc/ejemploBD", e);
+            throw new ServletException("Imposible recuperar java:comp/env/jdbc/ejemploBD", e);
         }
     }
 
@@ -45,51 +43,58 @@ public class ServletConsulta extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        response.setHeader("Cache-control", "no-cache");
-        response.setHeader("Cache-control", "no-store");
-        response.setDateHeader("Expires", 0);
-
         PrintWriter out = response.getWriter();
-        String qry, msg;
+        String qry;
         Connection con = null;
         try {
             synchronized (fuenteDatos) {
                 con = fuenteDatos.getConnection();
             }
             if (con == null) {
-                out.println("Error al recuperar la conexion, es nula <br/>");
                 throw new ServletException("Problemas con la conexion <br/>");
             }
-            final String correo = request.getParameter("correo");
-            final String pass = request.getParameter("contrasena");
-            final String nombre;
-            final String email;
-            final Integer tipo;
-            final String apaterno;
-            final String amaterno;
-            qry = "SELECT nombre,email,tipo,apaterno,amaterno FROM usuarios where email='" + correo
-                    + "' and contrasena='" + pass + "';";
+
+            String nombre;
+            String emailC;
+            String contra;
+            Integer tipoU;
+            String apaterno;
+            String amaterno;
+
+            qry = "SELECT * FROM usuarios;";
             PreparedStatement pstmt = con.prepareStatement(qry);
             ResultSet results = pstmt.executeQuery();
-            if (results.next()) {
+            out.print("<table class=\"table table-hover\">\n"
+                    + "  <thead class=\"thead-dark\">\n"
+                    + "    <tr>\n"
+                    + "      <th scope=\"col\">Nombre</th>\n"
+                    + "      <th scope=\"col\">Apellido Paterno</th>\n"
+                    + "      <th scope=\"col\">Apellido Materno</th>\n"
+                    + "      <th scope=\"col\">Email</th>\n"
+                    + "      <th scope=\"col\">Contraseña</th>\n"
+                    + "      <th scope=\"col\">Tipo de Usuario</th>\n"
+                    + "    </tr>\n"
+                    + "  </thead>\n");
+            while (results.next()) {
+                emailC = results.getString("email");
+                contra = results.getString("contrasena");
                 nombre = results.getString("nombre");
-                email = results.getString("email");
-                tipo = results.getInt("tipo");
                 apaterno = results.getString("apaterno");
                 amaterno = results.getString("amaterno");
+                tipoU = results.getInt("tipo");
 
-                HttpSession sesionOk = request.getSession();
-                sesionOk.setAttribute("nombre", nombre);
-                sesionOk.setAttribute("email", email);
-                sesionOk.setAttribute("tipo", tipo);
-                sesionOk.setAttribute("apaterno", apaterno);
-                sesionOk.setAttribute("amaterno", amaterno);
-
-                response.sendRedirect("index.jsp");
-            } else {
-                response.sendRedirect("login.jsp");
+                out.print("<tbody>\n"
+                        + "    <tr>\n"
+                        + "      <td> " + nombre + "</td>\n"
+                        + "      <td> " + apaterno + "</td>\n"
+                        + "      <td> " + amaterno + "</td>\n"
+                        + "      <td> " + emailC + "</td>\n"
+                        + "      <td> " + contra + "</td>\n"
+                        + "      <td> " + tipoU + "</td>\n"
+                        + "    </tr>"
+                        + "  </tbody>\n");
             }
-
+            out.print("</table>");
         } catch (Exception e) {
             out.println("Error al procesar consulta" + e.getMessage() + "<br/>");
         } finally {
@@ -99,7 +104,7 @@ public class ServletConsulta extends HttpServlet {
                 out.println("Error en proceso" + e.getMessage() + "<br/>");
             }
         }
-        out.close();
+        //out.close();
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -128,7 +133,7 @@ public class ServletConsulta extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);       
+        processRequest(request, response);
     }
 
     @Override

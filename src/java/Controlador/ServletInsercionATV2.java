@@ -64,6 +64,7 @@ public class ServletInsercionATV2 extends HttpServlet {
                 Statement stmt = (Statement) conn.createStatement();
                 String qry = "insert into encuestaP values ('" + nombreEncuesta + "','" + pregunta1 + "','" + pregunta2 + "','" + opcion1 + "','" + opcion2 + "','" + opcion3 + "','" + opcion4 + "','" + opcion5 + "','" + opcion6 + "','" + mes + "');";
                 stmt.executeUpdate(qry);
+                response.sendRedirect("nuevaEncuesta.jsp");
             }
         } catch (Exception e) {
             out.println("Falla Inserción "+e.getMessage());

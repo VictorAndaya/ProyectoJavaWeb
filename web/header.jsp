@@ -34,10 +34,11 @@
                     <a href="Redireccion?pagina=contacto">Contacto</a>
                     <a href="Redireccion?pagina=encuesta">Encuesta</a>
                     <!-- comparar si esta logeado y cambiar 'login' por nombre de usuario-->
-                    <%                        String user = (String) session.getAttribute("nombre");
+                    <%                        
+                        String user = (String) session.getAttribute("nombre");
                         String email = (String) session.getAttribute("email");
                         String nombreEncus = (String) session.getAttribute("nombreEncuesta");
-                        
+                        Integer tipo = (Integer) session.getAttribute("tipo");
                         if (user != null) {
                     %>
 
@@ -46,16 +47,18 @@
                     <a href="CerrarSesion?cerrar=true" class="dropdown-item">Log Out</a>
 
                     <%
-                        Integer tipo = (Integer) session.getAttribute("tipo");
+                        
                         if (tipo != 0) {
                     %>
-                    <a href="nuevaEncuesta.jsp" class="dropdown-item">Nueva Encuesta</a>
+                    <a href="Redireccion?pagina=usuarios" class="dropdown-item">Usuarios</a>
+                    <a href="Redireccion?pagina=nueva" class="dropdown-item">Nueva Encuesta</a>
+                    
                     <%
-                            }
+                        }
                     %>
 
-                    <%                    
-                            } else {
+                    <%
+                    } else if(user == null) {
                     %>
 
                     <a href="Redireccion?pagina=registro">Registrarme</a>
@@ -72,4 +75,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </html>

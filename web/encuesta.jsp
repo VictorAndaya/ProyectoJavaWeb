@@ -23,7 +23,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <title>JSP Page</title>
+        <title>Encuesta</title>
     </head>
     <body style="background-color: #ffffff;">
         <%@ include file="header.jsp" %>
@@ -33,38 +33,38 @@
                     <%                        if (user != null) {
 
                             LinkedList<Encuestas> lista = ConsultaEncuestas.getEncuestas();
-                            
+
                     %>
                     <div class="col-md-6 mt-4">
                         <h2>Encuesta</h2>
                         <div class="contenido p-4">
                             <form action="ServletInsercionATV1" method="post">
-                                <h3 class="text-center"><%=lista.get(0).getNombreEncuesta()%></h3>
-                                <input type="text" class="form-control" name="nombreEncu" value="" hidden="">
+                                <h3 class="text-center"><%=lista.get(0).getNombreEncuesta()%></h3><br>
+                                <input type="text" class="form-control" name="nombreEncu" value="<%=lista.get(0).getNombreEncuesta()%>" hidden="">
                                 <input type="email" class="form-control"  name="email" value="<%=email%>" hidden="">
                                 <div class="form-group col-md-12">
-                                    <label><%=lista.get(0).getPregunta1()%></label>
+                                    <h4><%=lista.get(0).getPregunta1()%></h4>
                                     <div class="radio">
-                                        <label><input type="radio" value="Bueno" name="pregunta1"><%=lista.get(0).getOpcion1()%></label>
+                                        <label><input type="radio" value="<%=lista.get(0).getOpcion1()%>" name="pregunta1"> <%=lista.get(0).getOpcion1()%></label>
                                     </div>
                                     <div class="radio">
-                                        <label><input type="radio" value="REgular" name="pregunta1"><%=lista.get(0).getOpcion2()%></label>
+                                        <label><input type="radio" value="<%=lista.get(0).getOpcion2()%>" name="pregunta1"> <%=lista.get(0).getOpcion2()%></label>
                                     </div>
                                     <div class="radio">
-                                        <label><input type="radio" value="Malo" name="pregunta1"><%=lista.get(0).getOpcion3()%></label>
+                                        <label><input type="radio" value="<%=lista.get(0).getOpcion3()%>" name="pregunta1"> <%=lista.get(0).getOpcion3()%></label>
                                     </div> 
                                     <span id="error_first_name" class="text-danger" class="form-control"></span>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label><%=lista.get(0).getPregunta2()%></label>
+                                    <h4><%=lista.get(0).getPregunta2()%></h4>
                                     <div class="radio">
-                                        <label><input type="radio" value="Bueno" name="pregunta2"><%=lista.get(0).getOpcion4()%></label>
+                                        <label><input type="radio" value="<%=lista.get(0).getOpcion4()%>" name="pregunta2"> <%=lista.get(0).getOpcion4()%></label>
                                     </div>
                                     <div class="radio">
-                                        <label><input type="radio" value="regular" name="pregunta2"><%=lista.get(0).getOpcion5()%></label>
+                                        <label><input type="radio" value="<%=lista.get(0).getOpcion5()%>" name="pregunta2"> <%=lista.get(0).getOpcion5()%></label>
                                     </div>
                                     <div class="radio">
-                                        <label><input type="radio" value="malo" name="pregunta2"><%=lista.get(0).getOpcion6()%></label>
+                                        <label><input type="radio" value="<%=lista.get(0).getOpcion6()%>" name="pregunta2"> <%=lista.get(0).getOpcion6()%></label>
                                     </div> 
                                     <span id="error_last_name" class="text-danger"></span>
                                 </div>
@@ -72,25 +72,24 @@
                                     <label>Comentarios</label>
                                     <textarea name="comentarios" id="address" class="form-control"></textarea>
                                     <span id="error_address" class="text-danger"></span>
-                                </div                                    
+                                </div> 
+                                <button class="button" type="submit">Enviar</button>
+                            </form>
                         </div>
-                        <button class="button" type="submit">Enviar</button>
-                        </form>
                     </div>
-                </div>
-                <%                    }
-                %>
-                <div class="col-md-6 mt-4">
-                    <h2>Historial de Encuestas</h2>
-                    <div class="contenido p-4">
-                        <div id="accordion">
-                            <jsp:include page="ServletConsulta1"/>
+                    <%                    }
+                    %>
+                    <div class="col-md-6 mt-4">
+                        <h2>Historial de Encuestas</h2>
+                        <div class="contenido p-4">
+                            <div id="accordion">
+                                <jsp:include page="ServletConsulta1"/>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <%@ include file="footer.jsp" %>
-</body>
+        </section>
+        <%@ include file="footer.jsp" %>
+    </body>
 </html>

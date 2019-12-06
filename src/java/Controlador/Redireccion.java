@@ -64,6 +64,12 @@ public class Redireccion extends HttpServlet {
         if (ubicacion.equals("encuesta")) {
             response.sendRedirect("encuesta.jsp");
         }
+        if (ubicacion.equals("usuarios")) {
+            response.sendRedirect("usuarios.jsp");
+        }
+        if (ubicacion.equals("nueva")) {
+            response.sendRedirect("nuevaEncuesta.jsp");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
